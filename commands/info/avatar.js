@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const { Client, Collection } = require("discord.js");
-var { prefix, token } = require('./config.json');
 const client = new Discord.Client();
 const snekfetch = require("snekfetch");
 const randomPuppy = require('random-puppy');
