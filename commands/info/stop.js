@@ -16,7 +16,13 @@ module.exports = {
   run: async (client, message, args) => {
     var server = servers[message.guild.id];
     if (!message.member.voiceChannel) {
-      message.channel.send("You must be in a voice channel ")
+      const vc = new Discord.RichEmbed()
+      .setAuthor("Error")
+      .setDescription(`You need to vbe in a voice channel`)
+      .setTimestamp()
+      .setFooter(`Requested by ${message.author.tag}`)
+      .setColor(`#a500ff`)
+      message.channel.send(vc)
       return;
     }
     if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();

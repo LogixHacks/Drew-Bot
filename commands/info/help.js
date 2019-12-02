@@ -12,11 +12,11 @@ const fs = require("fs");
 const bot = new Discord.Client({ dissableEveryone: true });
 
 module.exports = {
-    name: "help",
-    category: "info",
-    description: "Returns latency and API ping",
-    run: async (client, message, args) => {
-        const help = new Discord.RichEmbed()
+  name: "help",
+  category: "info",
+  description: "Returns latency and API ping",
+  run: async (client, message, args) => {
+    const help = new Discord.RichEmbed()
       .setFooter(`Requested by ${message.author.tag}`)
       .setColor("#a500ff")
       .setTimestamp()
@@ -33,7 +33,6 @@ module.exports = {
       !play | search for a song on youtube`)
     message.channel.send("Sent.");
     message.member.send(help);
-              
-    }
+
   }
-  
+}

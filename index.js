@@ -2,12 +2,7 @@ const Discord = require('discord.js');
 const { Client, Collection } = require("discord.js");
 var { prefix, token } = require('./config.json');
 const client = new Discord.Client();
-const snekfetch = require("snekfetch");
-const randomPuppy = require('random-puppy');
 const YTDL = require("ytdl-core");
-const getYouTubeID = require("get-youtube-id");
-const fetchVideoInfo = require("youtube-info");
-const servers = require("net");
 const search = require("yt-search");
 const fs = require("fs");
 const bot = new Discord.Client({ dissableEveryone: true });
@@ -25,13 +20,11 @@ client.aliases = new Collection();
 
 
 client.once('ready', () => {
-  console.log(`Aurora is ready to go. Online on ${bot.guilds.size} Servers!`);
-  client.user.setActivity('In beta (2.3.3)!help', {
+  console.log(`Drew Bot is ready to go. Online on ${bot.guilds.size} Servers!`);
+  client.user.setActivity('In beta (2.6.2)!help', {
     type: 'PLAYING'
   });
 })
-
-
 
 client.on('message', message => {
 

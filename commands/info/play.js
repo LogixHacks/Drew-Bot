@@ -61,7 +61,7 @@ module.exports = {
         var server = servers[message.guild.id];
 
         let validate = YTDL.validateURL(args[0])
-        if (!validate) return message.channel.send(`Sorry, pleast input a **valid** URL.(YouTube)`)
+        if (!validate) return message.channel.send(`Sorry, please input a **valid** URL.(YouTube)`)
 
         const songInfo = await YTDL.getInfo(args[0]);
         const song = {
@@ -73,8 +73,7 @@ module.exports = {
         if (server.queue[0])
             message.channel.send(`**${song.title}** Was added to the queue!`)
 
-
-
+            
         if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function (connection) {
             play(connection, message)
             const playembed = new Discord.RichEmbed()
@@ -85,9 +84,6 @@ module.exports = {
                 .setColor(`#a500ff`)
             message.channel.send(playembed)
         });
-
-
-
     }
 
 }
