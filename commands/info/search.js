@@ -40,10 +40,7 @@ module.exports = {
             collector.once('collect', function (m) {
                 let commandFile = require(`./play.js`);
                 commandFile.run(client, message, [this.videos[parseInt(m.content) - 1].url], ops);
-
-
             });
-
         });
     }
 }

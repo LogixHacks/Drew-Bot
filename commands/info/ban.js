@@ -19,8 +19,8 @@ module.exports = {
         let buser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if (!buser) message.channel.send("That user is not in the guild!");
         let breason = args.join(" ").slice(22);
-        if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have Permissions!");
-        if (buser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That user cannot be kicked!");
+        if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You do not have Permissions!");
+        if (buser.hasPermission("ADMINISTRATOR")) return message.channel.send("That user cannot be kicked!");
 
         let banembed = new Discord.RichEmbed()
             .setDescription(`Banned`)

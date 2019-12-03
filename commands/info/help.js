@@ -22,7 +22,8 @@ module.exports = {
       .setTimestamp()
       .addField("Helpful Commands", `!ping  | Pong?
     !help  | Sends you this message.
-    !av    | Fetches your avatar, or someone you mention.`)
+    !av    | Fetches your avatar, or someone you mention.
+    !giveaway | Starts a giveaway exaple !giveaway 1 [time for giveaway in secconds] [prize]`)
       .addField("Fun Commands", `!8ball | Let the Magic 8-ball answer your life questions.
     !kiss  | Give someone a kiss!
     !kill  | Kill someone!
@@ -32,9 +33,9 @@ module.exports = {
       !stop | Makes bot leave VC
       !skip | Skips current song!
       !play | search for a song on youtube`)
-    .addField(`Moderation`, `!ban | Bans a user you mention. Example !ban @user [Reason]`,
-      `!kick | Kicks a user you mention. Example !kick @user [Reason]`,
-      `!warn | Warns a user you mention. Example !warn @user [Reason]`)
+    .addField(`Moderation`, `!ban | Bans a user you mention. Example !ban @user [Reason]
+      !kick | Kicks a user you mention. Example !kick @user [Reason]
+      !warn | Warns a user you mention. Example !warn @user [Reason]`)
     message.channel.send("Sent.");
     message.member.send(help);
   }

@@ -19,8 +19,8 @@ module.exports = {
         let kuser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if (!kuser) message.channel.send("That user is not in the guild!");
         let kreason = args.join(" ").slice(22);
-        if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have Permissions!");
-        if (kuser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That user cannot be kicked!");
+        if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You do not have Permissions!");
+        if (kuser.hasPermission("ADMINISTRATOR")) return message.channel.send("That user cannot be kicked!");
 
         let kickembed = new Discord.RichEmbed()
             .setDescription(`Kick`)

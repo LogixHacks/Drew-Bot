@@ -18,10 +18,10 @@ module.exports = {
     category: "info",
     description: "Returns latency and API ping",
     run: async (client, message, args) => {
-        if (!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("No can do pal!");
+        if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("No can do pal!");
         let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
         if (!wUser) return message.reply("That user is not in the guild");
-        if (wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("That user cannot be warned");
+        if (wUser.hasPermission("ADMINISTRATOR")) return message.reply("That user cannot be warned");
         let reason = args.join(" ").slice(22);
 
         if (!warns[wUser.id]) warns[wUser.id] = {
