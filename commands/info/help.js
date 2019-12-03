@@ -25,14 +25,17 @@ module.exports = {
     !av    | Fetches your avatar, or someone you mention.`)
       .addField("Fun Commands", `!8ball | Let the Magic 8-ball answer your life questions.
     !kiss  | Give someone a kiss!
-    !kill  | Kill someone!`)
+    !kill  | Kill someone!
+    !level | XP and level System`)
       .addField(`Media Commands`, `!meme | Fetches you a random dank meme.
       !link | Link a youtube song For the bot to play
       !stop | Makes bot leave VC
       !skip | Skips current song!
       !play | search for a song on youtube`)
+    .addField(`Moderation`, `!ban | Bans a user you mention. Example !ban @user [Reason]`,
+      `!kick | Kicks a user you mention. Example !kick @user [Reason]`,
+      `!warn | Warns a user you mention. Example !warn @user [Reason]`)
     message.channel.send("Sent.");
     message.member.send(help);
-
   }
 }

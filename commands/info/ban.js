@@ -24,7 +24,7 @@ module.exports = {
 
         let banembed = new Discord.RichEmbed()
             .setDescription(`Banned`)
-            .addField("Bannd User", `${buser}`)
+            .addField("Banned User", `${buser}`)
             .addField("Banned By", `<@${message.author.id}>`)
             .addField("Banned In", message.channel)
             .addField("Time", message.createdAt)
