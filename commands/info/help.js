@@ -31,9 +31,6 @@ module.exports = {
       !stop | Makes bot leave VC
       !skip | Skips current song!
       !play | search for a song on youtube`)
-      .addField(`Moderation`, `!ban | Bans a user you mention. Example !ban @user [Reason]`,
-      `!kick | Kicks a user you mention. Example !kick @user [Reason]`,
-      `!warn | Warns a user you mention. Example !warn @user [Reason]`)
     message.channel.send("Sent.");
     message.member.send(help);
 
