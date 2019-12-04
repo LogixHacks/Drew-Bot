@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const { Client, Collection } = require("discord.js");
 var { prefix, token } = require('./config.json');
 const client = new Discord.Client();
+const botconfig = require(`./config.json`)
 const YTDL = require("ytdl-core");
 const search = require("yt-search");
 const fs = require("fs");
@@ -26,6 +27,15 @@ client.once('ready', () => {
 })
 
 client.on('message', message => {
+  let prefixes = JSON.parse(fs.readFileSync(`./prefixes.json`, `utf8`));
+
+  if (!prefixes[message.guild.id]) {
+    prefixes[message.guild.id] = {
+      prefixes: botconfig.prefix
+    };
+  }
+  let prefix = prefixes
+  [message.guild.id].prefixes;
 
   if (message.author.bot) return;
   if (!message.guild) return;
@@ -41,30 +51,29 @@ client.on('message', message => {
 
   if (command)
     command.run(client, message, args);
-    let xpAdd = Math.floor(Math.random() * 7) + 8;
-    console.log(xpAdd);
-  
-    if(!xp[message.author.id]){
-      xp[message.author.id] = {
-        xp: 0,
-        level: 1
-      };
-    }
-  
-    let curxp = xp[message.author.id].xp;
-    let curlvl = xp[message.author.id].level;
-    let nxtLvl = xp[message.author.id].level * 300;
-    xp[message.author.id].xp =  curxp + xpAdd;
-    if(nxtLvl <= xp[message.author.id].xp){
-      xp[message.author.id].level = curlvl + 1;
-      let lvlup = new Discord.RichEmbed()
+  let xpAdd = Math.floor(Math.random() * 7) + 8;
+
+  if (!xp[message.author.id]) {
+    xp[message.author.id] = {
+      xp: 0,
+      level: 1
+    };
+  }
+
+  let curxp = xp[message.author.id].xp;
+  let curlvl = xp[message.author.id].level;
+  let nxtLvl = xp[message.author.id].level * 300;
+  xp[message.author.id].xp = curxp + xpAdd;
+  if (nxtLvl <= xp[message.author.id].xp) {
+    xp[message.author.id].level = curlvl + 1;
+    let lvlup = new Discord.RichEmbed()
       .setTitle("Level Up!")
       .setColor(purple)
       .addField("New Level", curlvl + 1);
-      message.channel.send(lvlup).then(msg => {msg.delete(5000)});
-    }
-    fs.writeFile("./commands/info/xp.json", JSON.stringify(xp), (err) => {
-      if(err) console.log(err)
+    message.channel.send(lvlup).then(msg => { msg.delete(5000) });
+  }
+  fs.writeFile("./commands/info/xp.json", JSON.stringify(xp), (err) => {
+    if (err) console.log(err)
   });
 });
 client.login(token);
