@@ -34,7 +34,6 @@ module.exports = {
 
         const eightball = new Discord.RichEmbed()
             .setTitle('Magic 8-Ball Results')
-
             .setColor("#a500ff")
             .setTimestamp()
             .addField("Question", question)

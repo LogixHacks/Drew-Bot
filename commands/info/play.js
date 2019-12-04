@@ -73,7 +73,7 @@ module.exports = {
         if (server.queue[0])
             message.channel.send(`**${song.title}** Was added to the queue!`)
 
-            
+
         if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function (connection) {
             play(connection, message)
             const playembed = new Discord.RichEmbed()

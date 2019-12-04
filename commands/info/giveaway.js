@@ -23,7 +23,7 @@ module.exports = {
         var WinnerCount;
         let messageArray = message.content.split(" ");
 
-        for (var i = 3; i < messageArray.length; i++){
+        for (var i = 3; i < messageArray.length; i++) {
             item += (messageArray[i] + " ");
         }
         WinnerCount = Number(messageArray[1]);
@@ -35,31 +35,30 @@ module.exports = {
         embed.setColor(`#a500ff`)
         var embedSent = await message.channel.send(embed);
         embedSent.react(`🎉`);
-        setTimeout(function(){
+        setTimeout(function () {
             var peopleReacted = embedSent.reactions.get(`🎉`).users.array();
             var index = Math.floor(Math.random() * peopleReacted.length);
             var winners = [];
             var WinnerMessage = "";
-            for (var i = 0; i < WinnerCount; i++){
+            for (var i = 0; i < WinnerCount; i++) {
                 winners.push(peopleReacted[index]);
                 var index = Math.floor(Math.random() * peopleReacted.length);
             }
-            for (var i = 0; i < winners.length; i++){
-                if (winners[i].id == bot.user){
-                winners[i].slice(i, 1);
-                continue;
+            for (var i = 0; i < winners.length; i++) {
+                if (winners[i].id == bot.user) {
+                    winners[i].slice(i, 1);
+                    continue;
                 }
                 WinnerMessage += (winners[i].toString() + " ");
             }
             var haveHas = `has`;
-            if (winners.length ==1){
+            if (winners.length == 1) {
                 haveHas = "has";
             }
             else {
                 haveHas = "have";
             }
             message.channel.send(WinnerMessage + " " + haveHas + `won ${item}`);
-        },time * 1000);
+        }, time * 1000);
     }
-  }
-  
+}

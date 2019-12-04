@@ -15,12 +15,12 @@ module.exports = {
   description: "Returns latency and API ping",
   run: async (client, message, args) => {
     const queue = new Discord.RichEmbed()
-    .setAuthor("Server queue.")
-    .setDescription(`${server.queue}`)
-    .setTimestamp()
-    .setFooter(`Requested by ${message.author.tag}`)
-    .setColor(`#a500ff`)
-  message.channel.send(queue)
-    
+      .setAuthor("Server queue.")
+      .setDescription(`${server.queue}`)
+      .setTimestamp()
+      .setFooter(`Requested by ${message.author.tag}`)
+      .setColor(`#a500ff`)
+    message.channel.send(queue)
+
   }
 }

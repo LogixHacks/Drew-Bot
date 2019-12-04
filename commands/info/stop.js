@@ -17,11 +17,11 @@ module.exports = {
     var server = servers[message.guild.id];
     if (!message.member.voiceChannel) {
       const vc = new Discord.RichEmbed()
-      .setAuthor("Error")
-      .setDescription(`You need to vbe in a voice channel`)
-      .setTimestamp()
-      .setFooter(`Requested by ${message.author.tag}`)
-      .setColor(`#a500ff`)
+        .setAuthor("Error")
+        .setDescription(`You need to vbe in a voice channel`)
+        .setTimestamp()
+        .setFooter(`Requested by ${message.author.tag}`)
+        .setColor(`#a500ff`)
       message.channel.send(vc)
       return;
     }
