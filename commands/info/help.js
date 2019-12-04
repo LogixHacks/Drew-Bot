@@ -27,7 +27,9 @@ module.exports = {
       .addField("Fun Commands", `!8ball | Let the Magic 8-ball answer your life questions.
     !kiss  | Give someone a kiss!
     !kill  | Kill someone!
-    !level | XP and level System`)
+    !level | XP and level System
+    !server | Shows server information
+    !userinfo |Shows user information`)
       .addField(`Media Commands`, `!meme | Fetches you a random dank meme.
       !link | Link a youtube song For the bot to play
       !stop | Makes bot leave VC
@@ -35,7 +37,9 @@ module.exports = {
       !play | search for a song on youtube`)
     .addField(`Moderation`, `!ban | Bans a user you mention. Example !ban @user [Reason]
       !kick | Kicks a user you mention. Example !kick @user [Reason]
-      !warn | Warns a user you mention. Example !warn @user [Reason]`)
+      !warn | Warns a user you mention. Example !warn @user [Reason]
+      !purge | Purges user messages Example !purge 50
+`)
     message.channel.send("Sent.");
     message.member.send(help);
   }

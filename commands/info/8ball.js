@@ -17,7 +17,7 @@ module.exports = {
     description: "Returns latency and API ping",
     run: async (client, message, args) => {
 
-        if (!args[1]) {
+        if (!args[0]) {
             const eightballerror = new Discord.RichEmbed()
                 .setFooter(`Requested by ${message.author.tag}`)
                 .setTitle('Error')
