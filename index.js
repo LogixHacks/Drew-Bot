@@ -20,7 +20,7 @@ client.aliases = new Collection();
 });
 
 client.once('ready', () => {
-  console.log(`This Bot is ready to go. Online on ${bot.guilds.size} Servers!`);
+  console.log(`This Bot is ready to go. Online on ${client.guilds.size} Servers!`);
   client.user.setActivity('In beta (2.7.0)!help', {
     type: 'PLAYING'
   });

@@ -16,28 +16,17 @@ module.exports = {
     category: "info",
     description: "Returns latency and API ping",
     run: async (client, message, args) => {
-
-        if (!args[0]) {
-            const eightballerror = new Discord.RichEmbed()
-                .setFooter(`Requested by ${message.author.tag}`)
-                .setTitle('Error')
-                .setDescription("Ask a longer question.")
-                .setColor("#a500ff")
-                .setTimestamp()
-            return message.channel.send(eightballerror)
-        }
-
-        let replies = ["Yes.", "No.", "Hell no.", "Hell yeah!", "I don't know", "I really don't know.", "Ask again."]
+        if (!args[0]) return message.reply("Please  ask a longer question!");
+        let replies = ["Yes", "No ", "Maybe", "Ask again later"];
 
         let result = Math.floor((Math.random() * replies.length));
-        let question = args.slice(1).join(" ")
+        let question = args.slice(1).join(` `);
 
-        const eightball = new Discord.RichEmbed()
-            .setTitle('Magic 8-Ball Results')
-            .setColor("#a500ff")
-            .setTimestamp()
-            .addField("Question", question)
-            .addField("Answer", replies[result])
-        message.channel.send(eightball)
+        let ballembed = new Discord.RichEmbed()
+            .setAuthor(message.author.tag)
+            .setColor(`#a500ff`)
+            .addField(`Question`, question)
+            .addField(`Answer`, replies[result]);
+        message.channel.send(ballembed);
     }
 }
