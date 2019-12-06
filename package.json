@@ -11,6 +11,7 @@
     "ffmpeg-binaries": "^4.0.0",
     "fs": "0.0.1-security",
     "get-youtube-id": "^1.0.1",
+    "googleapis": "^45.0.0",
     "moment": "^2.24.0",
     "moment-duration-format": "^2.3.2",
     "opusscript": "0.0.7",
