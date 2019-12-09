@@ -13,7 +13,7 @@ const bot = new Discord.Client({ dissableEveryone: true });
 
 module.exports = {
     name: "kick",
-    category: "info",
+    category: "moderation",
     description: "Returns latency and API ping",
     run: async (client, message, args) => {
         let kuser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));

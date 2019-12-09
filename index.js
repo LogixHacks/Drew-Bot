@@ -8,7 +8,7 @@ const search = require("yt-search");
 const fs = require("fs");
 const bot = new Discord.Client({ dissableEveryone: true });
 let purple = ("#a500ff");
-let xp = require(`./commands/info/xp.json`);
+let xp = require(`./commands/fun/xp/xp.json`);
 
 bot.commands = new Discord.Collection();
 

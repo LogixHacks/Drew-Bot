@@ -12,25 +12,24 @@ const fs = require("fs");
 const bot = new Discord.Client({ dissableEveryone: true });
 
 module.exports = {
-  name: "kiss",
-  category: "info",
+  name: "kill",
+  category: "fun",
   description: "Returns latency and API ping",
   run: async (client, message, args) => {
-
-    var kissuser = message.mentions.members.first()
-    if (!kissuser) {
-      const kisserror = new Discord.RichEmbed()
+    var killuser = message.mentions.members.first()
+    if (!killuser) {
+      const killerror = new Discord.RichEmbed()
         .setTitle('Error')
-        .setDescription(`Mention the user you would like to kiss!`)
+        .setDescription(`Mention the user you would like to kill!`)
         .setColor("#a500ff")
         .setTimestamp()
-      return message.channel.send(kisserror)
+      return message.channel.send(killerror)
     }
-    const kissembed = new Discord.RichEmbed()
-      .setFooter(`Requested by ${message.author.tag}`)
+    const killembed = new Discord.RichEmbed()
       .setTimestamp()
+      .setFooter(`Requested by ${message.author.tag}`)
       .setColor("#a500ff")
-      .setDescription(`${message.author} gave **${kissuser}** a kiss!`)
-    message.channel.send(kissembed)
+      .setDescription(`${message.author} killed **${killuser}**.`)
+    message.channel.send(killembed)
   }
 }

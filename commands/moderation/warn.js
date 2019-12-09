@@ -15,7 +15,7 @@ const bot = new Discord.Client({ dissableEveryone: true });
 
 module.exports = {
     name: "warn",
-    category: "info",
+    category: "moderation",
     description: "Returns latency and API ping",
     run: async (client, message, args) => {
         if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("No can do pal!");

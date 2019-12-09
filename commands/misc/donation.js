@@ -15,7 +15,7 @@ const YouTube = require("discord-youtube-api");
 
 module.exports = {
     name: "donate",
-    category: "info",
+    category: "msic",
     description: "plays youtube song",
     run: async (client, message, args, ops, data) => {
         let donateembet = new Discord.RichEmbed()

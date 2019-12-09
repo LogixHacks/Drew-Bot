@@ -13,7 +13,7 @@ const bot = new Discord.Client({ dissableEveryone: true });
 
 module.exports = {
   name: "help",
-  category: "info",
+  category: "misc",
   description: "Returns latency and API ping",
   run: async (client, message, args) => {
     const help = new Discord.RichEmbed()

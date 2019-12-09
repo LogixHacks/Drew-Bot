@@ -13,7 +13,7 @@ const bot = new Discord.Client({ dissableEveryone: true });
 
 module.exports = {
   name: "av",
-  category: "info",
+  category: "msic",
   description: "Returns latency and API ping",
   run: async (client, message, args) => {
     regex = /\?=size[0-9]{1,45}$/g;

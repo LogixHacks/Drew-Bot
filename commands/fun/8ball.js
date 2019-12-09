@@ -13,7 +13,7 @@ const bot = new Discord.Client({ dissableEveryone: true });
 
 module.exports = {
     name: "8ball",
-    category: "info",
+    category: "fun",
     description: "Returns latency and API ping",
     run: async (client, message, args) => {
         if (!args[0]) return message.reply("Please  ask a longer question!");

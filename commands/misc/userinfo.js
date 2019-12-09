@@ -12,23 +12,26 @@ const fs = require("fs");
 const bot = new Discord.Client({ dissableEveryone: true });
 
 module.exports = {
-    name: "purge",
-    category: "info",
+    name: "userinfo",
+    category: "msic",
     description: "Returns latency and API ping",
     run: async (client, message, args) => {
         try {
-            let num
-            if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have Permissions!");
-            if (!isNaN(args[0])) {
-                num = parseInt(args[0])
+            const user = message.mentions.members.first() || message.member
 
-                if (num <= 100 && num > 1) {
-                    message.delete()
-                    message.channel.bulkDelete(num)
-                } else message.reply('You must enter a number between 2 and 100 for me to clear!')
-            } else {
-                message.reply('You must enter a number between 2 and 100 for me to clear!')
-            }
+            const embed = new Discord.RichEmbed()
+                .setTitle(user.user.username)
+                .setDescription(`ID: ${user.id}
+        Name: ${user.user.username}
+        Icon URL: ${user.user.avatarURL}
+        Account Created At: ${user.user.createdAt}
+        Game: ${user.user.presence.game || 'none'}
+        Status: ${user.user.presence.status.toUpperCase()}
+        Full Name: ${user.user.tag}`)
+                .setThumbnail(user.user.avatarURL)
+                .setColor('#a500ff')
+
+            message.channel.send(embed)
         } catch (err) {
             message.channel.send('There was an error!\n' + err).catch()
         }

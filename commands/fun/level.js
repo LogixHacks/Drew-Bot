@@ -10,12 +10,12 @@ const servers = require("net");
 const search = require("yt-search");
 const fs = require("fs");
 let purple = ("#a500ff");
-let xp = require(`./xp.json`);
+let xp = require(`./xp/xp.json`);
 const bot = new Discord.Client({ dissableEveryone: true });
 
 module.exports = {
   name: "level",
-  category: "info",
+  category: "fun",
   description: "Returns latency and API ping",
   run: async (client, message, args) => {
 

@@ -13,7 +13,7 @@ const bot = new Discord.Client({ dissableEveryone: true });
 
 module.exports = {
     name: "meme",
-    category: "info",
+    category: "fun",
     description: "Returns latency and API ping",
     run: async (client, message, args) => {
         randomPuppy(sub)
