@@ -18,7 +18,7 @@ module.exports = {
     run: async (client, message, args) => {
         try {
             let num
-            if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You do not have Permissions!");
+            if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have Permissions!");
             if (!isNaN(args[0])) {
                 num = parseInt(args[0])
 

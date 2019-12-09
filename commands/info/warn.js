@@ -42,7 +42,7 @@ module.exports = {
             .addField("Reason", reason)
             .addField("Time", message.createdAt);
         let warnchannel = message.guild.channels.find(`name`, "logs");
-        if (!warnchannel) return message.reply("Couldn't find channel");
+        if (!warnchannel) return message.reply(`Couldn't find channel called "logs"`);
         warnchannel.send(warnEmbed);
         if (warns[wUser.id].warns == 4) {
             let muterole = message.guild.roles.find(`name`, "muted");

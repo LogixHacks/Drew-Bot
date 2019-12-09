@@ -22,8 +22,7 @@ module.exports = {
       .setTimestamp()
       .addField("Helpful Commands", `!ping  | Pong?
     !help  | Sends you this message.
-    !av    | Fetches your avatar, or someone you mention.
-    !giveaway | Starts a giveaway exaple !giveaway 1 [time for giveaway in secconds] [prize]`)
+    !av    | Fetches your avatar, or someone you mention.`)
       .addField("Fun Commands", `!8ball | Let the Magic 8-ball answer your life questions.
     !kiss  | Give someone a kiss!
     !kill  | Kill someone!
@@ -36,11 +35,13 @@ module.exports = {
       !skip | Skips current song!
       !play | search for a song on youtube`)
       .addField(`Moderation`, `!ban | Bans a user you mention. Example !ban @user [Reason]
-      !kick | Kicks a user you mention. Example !kick @user [Reason]
-      !warn | Warns a user you mention. Example !warn @user [Reason]
-      !purge | Purges user messages Example !purge 50
-`)
-    message.channel.send("Sent.");
-    message.member.send(help);
+      !kick | Kicks a user you mention. Example !kick @user [Reason] (For this command tou need to have the permission called "Kick Members")
+      !warn | Warns a user you mention. Example !warn @user [Reason] (For this command tou need to have the permission called "Ban Members")
+      !purge | Purges user messages Example !purge 50 (For this command tou need to have the permission called "Manage Messages")`)
+      .addField(`Donations`,
+      `!donate | You dont have to trust me!`)
+      .addField(`Support`,
+      `If you experience any bugs/problems please contact me By DM @stΞvΞn#1093 or By joining my server https://discord.gg/tMCGH5F`)
+    message.channel.send(help);
   }
 }
