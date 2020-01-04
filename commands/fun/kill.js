@@ -31,5 +31,6 @@ module.exports = {
       .setColor("#a500ff")
       .setDescription(`${message.author} killed **${killuser}**.`)
     message.channel.send(killembed)
+ 
   }
 }

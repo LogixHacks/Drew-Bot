@@ -34,7 +34,7 @@ module.exports = {
             }
             resp += `\n** Choose a number between \`1-${videos.length}**\``;
             message.channel.send(resp);
-            const filter = m => !isNaN(m.content) && m.content < videos.length + 0 && m.content > 0;
+            const filter = m => !isNaN(m.content) && m.content < videos.length + 1 && m.content > 0;
             const collector = message.channel.createMessageCollector(filter);
             collector.videos = videos;
             collector.once('collect', function (m) {
