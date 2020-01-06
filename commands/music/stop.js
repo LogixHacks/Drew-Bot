@@ -22,7 +22,7 @@ module.exports = {
         .setTimestamp()
         .setFooter(`Requested by ${message.author.tag}`)
         .setColor(`#a500ff`)
-      message.channel.send(vc)
+      message.channel.send(vc).then(msg => { msg.delete(5000) });
       return;
     }
     if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();

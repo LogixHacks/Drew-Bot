@@ -16,7 +16,7 @@ module.exports = {
   run: async (client, message, args) => {
     var server = servers[message.guild.id];
     if (!message.member.voiceChannel) {
-      message.channel.send("You must be in a voice channel!")
+      message.channel.send("You must be in a voice channel!").then(msg => { msg.delete(5000) });
       return;
     }
     if (server && server.dispatcher) server.dispatcher.end();

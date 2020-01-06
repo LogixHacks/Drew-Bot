@@ -6,8 +6,8 @@ const botconfig = require(`./config.json`)
 const YTDL = require("ytdl-core");
 const search = require("yt-search");
 const fs = require("fs");
-let purple = ("#a500ff");
 const bot = new Discord.Client({ dissableEveryone: true });
+let purple = ("#a500ff");
 let xp = require(`./commands/fun/xp/xp.json`);
 
 bot.commands = new Discord.Collection();
@@ -59,6 +59,7 @@ client.on('message', message => {
       level: 1
     };
   }
+
   let curxp = xp[message.author.id].xp;
   let curlvl = xp[message.author.id].level;
   let nxtLvl = xp[message.author.id].level * 300;
@@ -69,9 +70,9 @@ client.on('message', message => {
       .setTitle("Level Up!")
       .setColor(purple)
       .addField("New Level", curlvl + 1);
-    message.channel.send(lvlup);
+    message.channel.send(lvlup).then(msg => { msg.delete(5000) });
   }
-  fs.writeFile("./commands/fun/xp/xp.json", JSON.stringify(xp), (err) => {
+  fs.writeFile("./commands/info/xp.json", JSON.stringify(xp), (err) => {
     if (err) console.log(err)
   });
 });

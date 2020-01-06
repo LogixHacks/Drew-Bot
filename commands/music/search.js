@@ -23,10 +23,10 @@ module.exports = {
                     .setTimestamp()
                     .setFooter(`Requested by ${message.author.tag}`)
                     .setColor(`#a500ff`)
-                message.channel.send(voiceerror)
+                message.channel.send(voiceerror).then(msg => { msg.delete(5000) });
                 return;
             }
-            if (err) return message.channel.send("Sorry something went wrong try again");
+            if (err) return message.channel.send("Sorry something went wrong try again").then(msg => { msg.delete(5000) });
             let videos = res.videos.slice(0, 5);
             let resp = "";
             for (var i in videos) {

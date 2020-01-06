@@ -39,7 +39,7 @@ module.exports = {
                 .setTimestamp()
                 .setFooter(`Requested by ${message.author.tag}`)
                 .setColor(`#a500ff`)
-            message.channel.send(urlerror)
+            message.channel.send(urlerror).then(msg => { msg.delete(5000) });
             return;
 
         }
@@ -50,7 +50,7 @@ module.exports = {
                 .setTimestamp()
                 .setFooter(`Requested by ${message.author.tag}`)
                 .setColor(`#a500ff`)
-            message.channel.send(voiceerror)
+            message.channel.send(voiceerror).then(msg => { msg.delete(5000) });
             return;
         }
 
@@ -60,7 +60,7 @@ module.exports = {
         var server = servers[message.guild.id];
 
         let validate = YTDL.validateURL(args[0])
-        if (!validate) return message.channel.send(`Sorry, please input a **valid** URL.(YouTube)`)
+        if (!validate) return message.channel.send(`Sorry, please input a **valid** URL.(YouTube)`).then(msg => { msg.delete(5000) });
 
         const songInfo = await YTDL.getInfo(args[0]);
         const song = {
@@ -70,7 +70,7 @@ module.exports = {
 
         server.queue.push(args[0]);
         if (server.queue[0])
-            message.channel.send(`**${song.title}** Was added to the queue!`)
+            message.channel.send(`**${song.title}** Was added to the queue!`).then(msg => { msg.delete(5000) });
 
 
         if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function (connection) {
