@@ -22,7 +22,8 @@ module.exports = {
       .setTimestamp()
       .addField("Helpful Commands", `!ping  | Pong?
     !help  | Sends you this message.
-    !av    | Fetches your avatar, or someone you mention.`)
+    !av    | Fetches your avatar, or someone you mention.
+    !cprefix | Sets a custom prefix!`)
       .addField("Fun Commands", `!8ball | Let the Magic 8-ball answer your life questions.
     !kiss  | Give someone a kiss!
     !kill  | Kill someone!
