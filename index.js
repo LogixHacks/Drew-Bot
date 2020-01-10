@@ -1,14 +1,14 @@
+const botconfig = require("./botconfig.json");
 const Discord = require('discord.js');
 const { Client, Collection } = require("discord.js");
-var { prefix, token } = require('./config.json');
+var { token } = require('./token.json');
 const client = new Discord.Client();
-const botconfig = require(`./config.json`)
 const YTDL = require("ytdl-core");
 const search = require("yt-search");
 const fs = require("fs");
 const bot = new Discord.Client({ dissableEveryone: true });
-let purple = ("#a500ff");
 let xp = require(`./commands/fun/xp/xp.json`);
+ 
 
 bot.commands = new Discord.Collection();
 
@@ -27,16 +27,14 @@ client.once('ready', () => {
 })
 
 client.on('message', message => {
-  let prefixes = JSON.parse(fs.readFileSync(`./prefixes.json`, `utf8`));
-
-  if (!prefixes[message.guild.id]) {
+  let prefixes = JSON.parse(fs.readFileSync("./commands/misc/prefixes.json", "utf8"));
+  if(!prefixes[message.guild.id]){
     prefixes[message.guild.id] = {
       prefixes: botconfig.prefix
     };
   }
-  let prefix = prefixes
-  [message.guild.id].prefixes;
 
+  let prefix = prefixes[message.guild.id].prefixes;
   if (message.author.bot) return;
   if (!message.guild) return;
   if (!message.content.startsWith(prefix)) return;
@@ -68,7 +66,7 @@ client.on('message', message => {
     xp[message.author.id].level = curlvl + 1;
     let lvlup = new Discord.RichEmbed()
       .setTitle("Level Up!")
-      .setColor(purple)
+      .setColor()
       .addField("New Level", curlvl + 1);
     message.channel.send(lvlup).then(msg => { msg.delete(5000) });
   }
