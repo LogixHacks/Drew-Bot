@@ -3,30 +3,27 @@ const { Client, Collection } = require("discord.js");
 const client = new Discord.Client();
 const snekfetch = require("snekfetch");
 const randomPuppy = require('random-puppy');
-const YTDL = require("ytdl-core");
-const getYouTubeID = require("get-youtube-id");
-const fetchVideoInfo = require("youtube-info");
 const servers = require("net");
-const search = require("yt-search");
 const fs = require("fs");
-const bot = new Discord.Client({ dissableEveryone: true });
+const bot = new Discord.Client({ disableEveryone: true });
 
 module.exports = {
     name: "8ball",
     category: "fun",
-    description: "Returns latency and API ping",
+    description: "Ask The Magic 8-Ball a question.",
     run: async (client, message, args) => {
-        if (!args[0]) return message.reply("Please  ask a longer question!");
-        let replies = ["Yes", "No ", "Maybe", "Ask again later"];
+        if (!args[0]) return message.channel.send(":x: **Please ask a longer question!**");
+        let replies = ["Yessir.", "Uhhuh.", "Yep.", "For sure.", "Definitely.", "Maybe.", "Not sure.", "Nah.", "No chance.", "Hell no.", "Dude, seriously?", "God no."];
 
         let result = Math.floor((Math.random() * replies.length));
-        let question = args.slice(1).join(` `);
+        let question = args.slice(0).join(` `);
 
         let ballembed = new Discord.RichEmbed()
-            .setAuthor(message.author.tag)
+            .setTitle("Results")
             .setColor(`#a500ff`)
             .addField(`Question`, question)
-            .addField(`Answer`, replies[result]);
+            .addField(`Answer`, replies[result])
+            .setTimestamp()
         message.channel.send(ballembed);
     }
 }
