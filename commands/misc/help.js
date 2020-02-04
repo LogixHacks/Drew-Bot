@@ -22,25 +22,23 @@ module.exports = {
       .setTimestamp()
       .addField("Helpful Commands", `!ping  | Pong?
     !help  | Sends you this message.
-    !av    | Fetches your avatar, or someone you mention.`)
+    !av    | Fetches your avatar, or someone you mention.
+    !cprefix | Sets a custom prefix!`)
       .addField("Fun Commands", `!8ball | Let the Magic 8-ball answer your life questions.
     !kiss  | Give someone a kiss!
     !kill  | Kill someone!
+    !level | XP and level System
     !server | Shows server information
     !userinfo |Shows user information`)
       .addField(`Media Commands`, `!meme | Fetches you a random dank meme.
+      !link | Link a youtube song For the bot to play
       !stop | Makes bot leave VC
       !skip | Skips current song!
-      !play | search for a song on youtube
-      !queue | Shows current servers queue!
-      !pause | Pauses currentley playing media!
-      !resume | resumes playing media!
-      !np | Shows Current song!
-      !volume | Sets volume between 1 - 100%!`)
+      !play | search for a song on youtube`)
       .addField(`Moderation`, `!ban | Bans a user you mention. Example !ban @user [Reason]
-      !kick | Kicks a user you mention. Example !kick @user [Reason] (For this command you need to have the permission called "Kick Members")
-      !warn | Warns a user you mention. Example !warn @user [Reason] (For this command you need to have the permission called "Ban Members")
-      !purge | Purges user messages Example !purge 50 (For this command you need to have the permission called "Manage Messages")`)
+      !kick | Kicks a user you mention. Example !kick @user [Reason] (For this command tou need to have the permission called "Kick Members")
+      !warn | Warns a user you mention. Example !warn @user [Reason] (For this command tou need to have the permission called "Ban Members")
+      !purge | Purges user messages Example !purge 50 (For this command tou need to have the permission called "Manage Messages")`)
       .addField(`Donations`,
       `!donate | You dont have to trust me!`)
       .addField(`Support`,

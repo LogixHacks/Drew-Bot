@@ -16,7 +16,7 @@ module.exports = {
     category: "fun",
     description: "Returns latency and API ping",
     run: async (client, message, args) => {
-        if (message.author.id === `611775766698524674`)
+        if (message.author.id === `415428963901374466`)
         message.channel.send(`Restarting bot....`)
             .then(client.destroy())
             .then(client.login(token))
