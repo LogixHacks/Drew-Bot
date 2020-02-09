@@ -10,6 +10,7 @@ const servers = require("net");
 const search = require("yt-search");
 const fs = require("fs");
 const bot = new Discord.Client({ dissableEveryone: true });
+purple = (`#a500ff`)
 
 module.exports = {
   name: "kiss",
@@ -22,14 +23,14 @@ module.exports = {
       const kisserror = new Discord.RichEmbed()
         .setTitle('Error')
         .setDescription(`Mention the user you would like to kiss!`)
-        .setColor("#a500ff")
+        .setColor(purple)
         .setTimestamp()
       return message.channel.send(kisserror)
     }
     const kissembed = new Discord.RichEmbed()
       .setFooter(`Requested by ${message.author.tag}`)
       .setTimestamp()
-      .setColor("#a500ff")
+      .setColor(purple)
       .setDescription(`${message.author} gave **${kissuser}** a kiss!`)
     message.channel.send(kissembed)
   }

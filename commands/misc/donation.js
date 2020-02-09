@@ -12,6 +12,7 @@ const fs = require("fs");
 opusscript = require("opusscript");
 const { getInfo } = require('ytdl-getinfo')
 const YouTube = require("discord-youtube-api");
+purple = (`#a500ff`)
 
 module.exports = {
     name: "donate",
@@ -27,7 +28,7 @@ module.exports = {
                 ---------------------------------------------`)
                 .setTimestamp()
                 .setFooter(`Requested by ${message.author.tag}`)
-                .setColor(`#a500ff`)
+                .setColor(purple)
         message.channel.send(donateembet)
     }
 }

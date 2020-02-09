@@ -9,6 +9,7 @@ const fetchVideoInfo = require("youtube-info");
 const servers = require("net");
 const search = require("yt-search");
 const fs = require("fs");
+purple = (`#a500ff`)
 const bot = new Discord.Client({ dissableEveryone: true });
 
 module.exports = {
@@ -21,14 +22,14 @@ module.exports = {
       const killerror = new Discord.RichEmbed()
         .setTitle('Error')
         .setDescription(`Mention the user you would like to kill!`)
-        .setColor("#a500ff")
+        .setColor(purple)
         .setTimestamp()
       return message.channel.send(killerror)
     }
     const killembed = new Discord.RichEmbed()
       .setTimestamp()
       .setFooter(`Requested by ${message.author.tag}`)
-      .setColor("#a500ff")
+      .setColor(purple)
       .setDescription(`${message.author} killed **${killuser}**.`)
     message.channel.send(killembed)
  

@@ -10,6 +10,7 @@ const servers = require("net");
 const search = require("yt-search");
 const fs = require("fs");
 const bot = new Discord.Client({ dissableEveryone: true });
+purple = (`#a500ff`)
 
 module.exports = {
     name: "purge",

@@ -9,6 +9,7 @@ const fetchVideoInfo = require("youtube-info");
 const servers = require("net");
 const search = require("yt-search");
 const fs = require("fs");
+purple = (`#a500ff`)
 const bot = new Discord.Client({ dissableEveryone: true });
 
 module.exports = {
@@ -29,7 +30,7 @@ module.exports = {
         Status: ${user.user.presence.status.toUpperCase()}
         Full Name: ${user.user.tag}`)
                 .setThumbnail(user.user.avatarURL)
-                .setColor('#a500ff')
+                .setColor(purple)
 
             message.channel.send(embed)
         } catch (err) {

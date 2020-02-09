@@ -10,6 +10,7 @@ const servers = require("net");
 const search = require("yt-search");
 const fs = require("fs");
 const bot = new Discord.Client({ dissableEveryone: true });
+purple = (`#a500ff`)
 
 module.exports = {
     name: "server",
@@ -38,7 +39,7 @@ module.exports = {
         if (message.guild.region === 'us-west') region = ':flag_us: US West'
 
         const embed = new Discord.RichEmbed()
-            .setColor("#a500ff")
+            .setColor(purple)
             .setThumbnail(Icon)
             .setFooter(`${message.guild.id}`,
                 'https://cdn.discordapp.com/avatars/492871769485475840/6164d0068b8e76e497af9b0e1746f671.png?size=2048')

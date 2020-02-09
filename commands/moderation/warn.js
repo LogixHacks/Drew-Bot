@@ -12,6 +12,7 @@ const fs = require("fs");
 const ms = require("ms");
 let warns = JSON.parse(fs.readFileSync("./warn/warnings.json", "utf8"));
 const bot = new Discord.Client({ dissableEveryone: true });
+purple = (`#a500ff`)
 
 module.exports = {
     name: "warn",
@@ -34,7 +35,7 @@ module.exports = {
         let warnEmbed = new Discord.RichEmbed()
             .setDescription("Warns")
             .setAuthor(message.author.username)
-            .setColor("#a500ff")
+            .setColor(purple)
             .addField("Warned User", `<@${wUser.id}>`)
             .addField("Warned By", `<@${message.author.id}>`)
             .addField("Warned In", message.channel)

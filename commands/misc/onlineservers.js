@@ -10,6 +10,7 @@ const servers = require("net");
 const search = require("yt-search");
 const fs = require("fs");
 const bot = new Discord.Client({ dissableEveryone: true });
+purple = (`#a500ff`)
 
 module.exports = {
     name: "serverlist",
@@ -20,7 +21,7 @@ module.exports = {
         .setDescription(`I am online in ${client.guilds.size} Guilds!`)
         .setTimestamp()
         .setFooter(`Requested by ${message.author.tag}`)
-        .setColor(`#a500ff`)
+        .setColor(purple)
       message.channel.send(dc)
     }
 }

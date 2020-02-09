@@ -10,19 +10,21 @@ const servers = require("net");
 const search = require("yt-search");
 const fs = require("fs");
 const bot = new Discord.Client({ dissableEveryone: true });
+purple = (`#a500ff`)
 
 module.exports = {
   name: "help",
   category: "misc",
   description: "Returns latency and API ping",
   run: async (client, message, args) => {
-    const help = new Discord.RichEmbed()
+    const help = new Discord. RichEmbed()
       .setFooter(`Requested by ${message.author.tag}`)
-      .setColor("#a500ff")
+      .setColor(purple)
       .setTimestamp()
       .addField("Helpful Commands", `!ping  | Pong?
     !help  | Sends you this message.
-    !av    | Fetches your avatar, or someone you mention.`)
+    !av    | Fetches your avatar, or someone you mention.
+    !8balladd | Adds a sugestion for 8ball to a json`)
       .addField("Fun Commands", `!8ball | Let the Magic 8-ball answer your life questions.
     !kiss  | Give someone a kiss!
     !kill  | Kill someone!
@@ -38,9 +40,9 @@ module.exports = {
       !warn | Warns a user you mention. Example !warn @user [Reason] (For this command tou need to have the permission called "Ban Members")
       !purge | Purges user messages Example !purge 50 (For this command tou need to have the permission called "Manage Messages")`)
       .addField(`Donations`,
-      `!donate | You dont have to trust me!`)
+        `!donate | You dont have to trust me!`)
       .addField(`Support`,
-      `If you experience any bugs/problems please contact me By DM @stΞvΞn#1093 or By joining my server https://discord.gg/tMCGH5F`)
+        `If you experience any bugs/problems please contact me By DM @stΞvΞn#1093 or By joining my server https://discord.gg/tMCGH5F`)
     message.channel.send(help);
   }
 }

@@ -10,6 +10,7 @@ const servers = require("net");
 const search = require("yt-search");
 const fs = require("fs");
 const bot = new Discord.Client({ dissableEveryone: true });
+purple = (`#a500ff`);
 
 module.exports = {
     name: "meme",
@@ -27,7 +28,7 @@ module.exports = {
         randomPuppy(sub)
             .then(url => {
                 const memeembed = new Discord.RichEmbed()
-                    .setColor("#a500ff")
+                    .setColor(purple)
                     .setTitle(`Provided by r/${sub}`)
                     .setURL(`https://reddit.com/r/${sub}`)
                     .setFooter(`Requested by ${message.author.tag}`)

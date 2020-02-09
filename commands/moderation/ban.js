@@ -10,6 +10,7 @@ const servers = require("net");
 const search = require("yt-search");
 const fs = require("fs");
 const bot = new Discord.Client({ dissableEveryone: true });
+purple = (`#a500ff`)
 
 module.exports = {
     name: "ban",
@@ -29,7 +30,7 @@ module.exports = {
             .addField("Banned In", message.channel)
             .addField("Time", message.createdAt)
             .addField("Reason", breason)
-            .setColor("#a500ff");
+            .setColor(purple);
 
         let banChannel = message.guild.channels.find(`name`, "logs");
         if (!banChannel) return message.channel.send("Cannot find logs channel.");
