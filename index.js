@@ -23,8 +23,8 @@ client.aliases = new Collection();
 
 client.once('ready', () => {
 	console.log(`This Bot is ready to go. Online on ${client.guilds.size} Servers!`);
-	client.user.setActivity(`!help Protecting ${client.guilds.size} Guilds`, {
-		type: 'PLAYING'
+	client.user.setActivity(`Jayshade on SoundCloud!`, {
+		type: `STREAMING`
 	});
 })
 
@@ -70,7 +70,7 @@ client.on('message', async message => {
 			return message.channel.send(`✅ Playlist: **${playlist.title}** has been added to the queue!`);
 		} else {
 			try {
-				var video = await youtube.getVideo(url);
+				var video = await youtube.getVideo(`https://www.youtube.com/watch?v=SsKT0s5J8ko&list=RDMM&index=1`);
 			} catch (error) {
 				try {
 					var videos = await youtube.searchVideos(searchString, 5);
@@ -115,7 +115,7 @@ client.on('message', async message => {
 		serverQueue.connection.dispatcher.end();
 		return undefined;
 	} else if (message.content.startsWith(`${prefix}volume`)) {
-		if (!message.member.voiceChannel) return message.channel.send('You are not in a voice channel!');
+		if (!voiceChannel) return message.channel.send('I\'m sorry but you need to be in a voice channel to Change the volume!');
 		if (!serverQueue) return message.channel.send('There is nothing playing.');
 		if (!args[0]) return message.channel.send(`The current volume is: **${serverQueue.volume}**`);
 		serverQueue.volume = args[0];

@@ -6,6 +6,8 @@ const randomPuppy = require('random-puppy');
 const servers = require("net");
 const fs = require("fs");
 const bot = new Discord.Client({ disableEveryone: true });
+const Enmap = require(`enmap`)
+
 module.exports = {
     name: "8balladd",
     category: "fun",
@@ -13,9 +15,6 @@ module.exports = {
     run: async (client, message, args) => {
         let add8ball_args = args.slice(0).join(` `);
 
-        fs.writeFile("./8balladd.json", JSON.stringify(add8ball_args), (err) => {
-            if (err) console.log(err)
-        });
 
         let ballembed = new Discord.RichEmbed()
             .setTitle("8Ball")
